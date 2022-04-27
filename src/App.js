@@ -1,5 +1,5 @@
 import "./App.css";
-import data from "./data.json";
+import datas from "./data.json";
 import Section from "./Section";
 import Logo from "./logo.png";
 
@@ -10,14 +10,8 @@ const App = () => {
     return (
         <div className="page">
             <img className="logo" src={Logo} alt="logo de Netflix" />
-            {data.map((data, index) => {
-                return (
-                    <Section
-                        key={index}
-                        image={data.images}
-                        title={data.category}
-                    />
-                );
+            {datas.map((data, index) => {
+                return <Section key={index} data={data} />;
             })}
         </div>
     );
